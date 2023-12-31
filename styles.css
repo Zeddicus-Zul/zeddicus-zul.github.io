@@ -1,17 +1,26 @@
-* {
-  margin:0px;
-  padding:0px;
+/* styles.css */
+
+/* Apply styles to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+/* Apply styles to headings */
+h1 {
+    color: #c500cc;
 }
 
+/* Apply styles to paragraphs */
 p {
-  display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Apply styles to a class */
+.highlight {
+    background-color: yellow;
 }
