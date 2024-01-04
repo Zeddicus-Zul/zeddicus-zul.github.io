@@ -51,7 +51,25 @@ function submitGitHubIssue(name, commentText) {
             title: `${name}'s Comment`,
             body: commentText
         })
-    });
+    })
+
+    .then(response => {
+        // Check rate limit information in headers
+        const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+        const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+
+        console.log('Remaining API calls:', rateLimitRemaining);
+        console.log('Reset time (in seconds since Epoch):', rateLimitReset);
+
+        // Check if the response is OK
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        return response.json();
+    })
+    .then(data => console.log('Successfully submitted comment:', data))
+    .catch(error => console.error('Error submitting comment:', error));
 }
 
 // Display comments when the page loads
