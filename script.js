@@ -45,7 +45,7 @@ function submitGitHubIssue(name, commentText) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${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}`
+            'Authorization': `Bearer ${accessToken}`
         },
         body: JSON.stringify({
             title: `${name}'s Comment`,
