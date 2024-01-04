@@ -39,7 +39,7 @@ function displayGitHubIssues() {
 
 // Function to submit a comment to GitHub Issues
 function submitGitHubIssue(name, commentText) {
-    const accessToken = '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'; // Replace with your GitHub access token
+    const accessToken = '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'; // Replace with your GitHub access token
 
     fetch('https://api.github.com/repos/Zeddicus-Zul/zeddicus-zul.github.io/issues', {
         method: 'POST',
