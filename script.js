@@ -23,7 +23,7 @@ function displayGitHubIssues() {
     const commentsDiv = document.getElementById('comments');
 
     // Fetch comments from GitHub Issues
-    fetch('https://api.github.com/repos/Zeddicus-Zul/zeddicus-zul.github.io/issues')
+    fetch('https://api.github.com/repos/zeddicus-zul/zeddicus-zul.github.io/issues')
         .then(response => response.json())
         .then(issues => {
             // Display each issue as a comment
