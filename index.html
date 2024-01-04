@@ -45,15 +45,22 @@
     </header>
 
     <main>
-        <section>
-            <h2>My Huntshowdown Stats:</h2>
-            <p>I suck.</p>
-        </section>
-        <section>
-            <h2>LoL Stats:</h2>
-            <p>I suck even more.</p>
-        </section>
-        <!-- Add more sections as needed -->
+        <form id="commentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+    
+            <label for="comment">Comment:</label>
+            <textarea id="comment" required></textarea><br>
+    
+            <button type="button" onclick="submitComment()">Submit Comment</button>
+        </form>
+    
+        <div id="comments"></div>
+    
+        <script src="script.js"></script>
     </main>
 
     <footer>
+        </footer>
+        </body>
+        </html>
