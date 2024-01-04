@@ -41,7 +41,7 @@ function displayGitHubIssues() {
 function submitGitHubIssue(name, commentText) {
     const accessToken = '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'; // Replace with your GitHub access token
 
-    fetch('https://api.github.com/repos/zeddicus-zul/zeddicus-zul.github.io/issues', {
+    fetch('https://api.github.com/repos/Zeddicus-Zul/zeddicus-zul.github.io/issues', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
