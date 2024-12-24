@@ -64,3 +64,6 @@ export async function loadMovies() {
 
 // Load movies on page load
 document.addEventListener("DOMContentLoaded", loadMovies);
+
+// Add event listener for submit button
+document.getElementById("submitBtn").addEventListener("click", submitMovie);

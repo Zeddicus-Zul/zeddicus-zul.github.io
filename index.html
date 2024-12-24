@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Movie Night</title>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script.js?v=1.1"></script> <!-- Only one script import -->
 
     <style>
         /* Add your CSS styles here */
@@ -64,7 +64,7 @@
             <label for="title">Movie Title:</label>
             <input type="text" id="title" required><br>
 
-            <button type="button" onclick="submitMovie()">Submit Movie Title</button>
+            <button type="button" id="submitBtn">Submit Movie Title</button> <!-- Use id instead of inline onclick -->
         </form>
 
         <div id="movies" class="movie-list"></div>
@@ -73,9 +73,6 @@
     <footer>
         <p>Movie Night - 2024</p>
     </footer>
-    <script type="module" src="script.js?v=1.1"></script>
-    <script type="module" src="script.js"></script>
-</body>
 
 </body>
 
