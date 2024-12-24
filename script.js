@@ -47,7 +47,7 @@ export async function loadComments() {
         const snapshot = await getDocs(q);
         snapshot.forEach(doc => {
             const comment = doc.data();
-            commentsDiv.innerHTML += `<p><strong>${comment.name}</strong>: ${comment.comment}</p>`;
+            commentsDiv.innerHTML += `<p><strong>${comment.name}</strong>: ${comment.comments}</p>`;
         });
     } catch (error) {
         console.error('Error loading comments:', error);
