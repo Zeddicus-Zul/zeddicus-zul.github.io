@@ -25,49 +25,58 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Submit a comment to Firestore
-window.submitComment = submitComment;
 export async function submitComment() {
-  const name = document.getElementById("name").value;
-  const comment = document.getElementById("comment").value;
-
-  if (name && comment) {
-    try {
-      await addDoc(collection(db, "comments"), {
-        name: name,
-        comment: comment,
-        timestamp: new Date(), // Using JavaScript Date object
-      });
-      alert("Comment submitted!");
-      loadComments();
-    } catch (error) {
-      console.error("Error submitting comment:", error);
+    const name = document.getElementById("name").value;
+    const title = document.getElementById("title").value;  // New title field
+    const comment = document.getElementById("comment").value;
+  
+    if (name && title && comment) {
+      try {
+        await addDoc(collection(db, "Submission"), {
+          name: name,
+          title: title,  // Add title to the document
+          comment: comment,  // Assuming the comment is being sent as a new field
+          timestamp: new Date(), // Using JavaScript Date object
+        });
+        alert("Comment submitted!");
+        loadComments();  // Reload comments after submission
+      } catch (error) {
+        console.error("Error submitting comment:", error);
+      }
     }
   }
-}
+  
 
+// Load comments from Firestore
 export async function loadComments() {
     const commentsDiv = document.getElementById("comments");
     commentsDiv.innerHTML = ""; // Clear old comments
   
     try {
-      const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+      const q = query(collection(db, "Submission"), orderBy("timestamp", "desc"));
       const snapshot = await getDocs(q);
-  
       snapshot.forEach((doc) => {
         const comment = doc.data();
-        const timestamp = comment.timestamp 
-          ? comment.timestamp.toDate().toLocaleString() 
-          : "No timestamp available"; // Handle cases where timestamp might be missing
+        
+        // Extract name, title, and timestamp
+        const name = comment.name;
+        const title = comment.title;
+        const timestamp = comment.timestamp ? comment.timestamp.toDate() : new Date();
+  
+        // Format the timestamp
+        const formattedDate = timestamp.toLocaleString();
   
         commentsDiv.innerHTML += `
-          <p><strong>${comment.name}</strong>: ${comment.comment}</p>
-          <p><small>Posted on: ${timestamp}</small></p>
+          <p><strong>${name}</strong> commented on <em>${title}</em>:</p>
+          <p>${comment.comment}</p>
+          <p><small>Posted on: ${formattedDate}</small></p>
         `;
       });
     } catch (error) {
       console.error("Error loading comments:", error);
     }
   }
+  
   
 
 // Load comments on page load
