@@ -8,7 +8,7 @@ import {
   orderBy,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
-// Your Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDfKWTQQTChVooan2CePhz3GEEYYjYi5GU",
   authDomain: "movie-night-1b2eb.firebaseapp.com",
@@ -44,7 +44,6 @@ export async function submitMovie() {
     }
   }
 }
-
 
 // Load movie titles from Firestore
 export async function loadMovies() {
