@@ -30,18 +30,21 @@ export async function submitMovie() {
 
   if (name && title) {
     try {
+      // Add movie submission to Firestore
       await addDoc(collection(db, "Submission"), {
         name: name,
         title: title,
         timestamp: new Date(), // Save the current date and time
       });
+      console.log("Movie title submitted successfully!");
       alert("Movie title submitted!");
-      loadMovies();
+      loadMovies(); // Reload the list of movies
     } catch (error) {
       console.error("Error submitting movie title:", error);
     }
   }
 }
+
 
 // Load movie titles from Firestore
 export async function loadMovies() {
