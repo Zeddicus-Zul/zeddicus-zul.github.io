@@ -25,6 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Submit a comment to Firestore
+window.submitComment = submitComment;
 export async function submitComment() {
   const name = document.getElementById("name").value;
   const comment = document.getElementById("comment").value;
