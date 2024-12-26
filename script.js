@@ -6,6 +6,8 @@ import {
   getDocs,
   query,
   orderBy,
+  deleteDoc,  // Added deleteDoc
+  doc,         // Added doc
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 // Firebase configuration
@@ -55,10 +57,35 @@ export async function loadMovies() {
     const snapshot = await getDocs(q);
     snapshot.forEach((doc) => {
       const movie = doc.data();
-      moviesDiv.innerHTML += `<p><strong>${movie.name}</strong>: ${movie.title}</p>`;
+      const movieId = doc.id; // Get the document ID for deletion
+
+      // Add the movie and delete button to the DOM
+      const movieItem = document.createElement("p");
+      movieItem.innerHTML = `<strong>${movie.name}</strong>: ${movie.title} <span class="delete-btn" data-id="${movieId}">Delete</span>`;
+      moviesDiv.appendChild(movieItem);
+
+      // Add event listener to the delete button
+      const deleteBtn = movieItem.querySelector(".delete-btn");
+      deleteBtn.addEventListener("click", function () {
+        deleteMovie(movieId, movieItem);
+      });
     });
   } catch (error) {
     console.error("Error loading movie titles:", error);
+  }
+}
+
+// Delete movie from Firestore and DOM
+async function deleteMovie(movieId, movieItem) {
+  try {
+    // Delete movie from Firestore
+    await deleteDoc(doc(db, "Submission", movieId));
+    console.log("Movie deleted successfully!");
+
+    // Remove movie from DOM
+    movieItem.remove();
+  } catch (error) {
+    console.error("Error deleting movie:", error);
   }
 }
 
