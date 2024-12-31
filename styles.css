@@ -7,46 +7,42 @@ body {
     padding: 0;
 }
 
-/* Apply styles to headings */
+/* Apply styles to headings, pharagraphs and class */
 h1 {
     color: #c500cc;
     text-align: center; /* Center-align the heading */
 }
 
-/* Apply styles to paragraphs */
 p {
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Apply styles to a class */
 .highlight {
     background-color: yellow;
 }
 
-/* Styling for the form container */
 form {
-    max-width: 600px; /* Limit the width of the form */
-    margin: 2em auto; /* Center the form on the page */
-    padding: 1em;
-    background-color: #fff; /* White background for the form */
+    max-width: 600px; 
+    margin: 2em auto; /*2em means twice the font size (2 * 12pt)*/
+    padding: 1em; /*1em means normal font size*/
+    background-color: #fff; 
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Styling for the labels */
 label {
     font-size: 18px;
     font-weight: bold;
     color: #333;
     margin-bottom: 0.5em;
     display: block; /* Display labels as block elements */
-    margin-top: 1em; /* Space out the labels */
+    margin-top: 1em; 
 }
 
-/* Styling for input fields */
+/* fields */
 input[type="text"] {
-    width: 100%; /* Make input fields take up the full width */
+    width: 50%; /* Make input fields take up the full width */
     padding: 0.8em; /* Add padding inside the input field */
     margin-top: 0.5em; /* Space between the label and input */
     font-size: 16px;
