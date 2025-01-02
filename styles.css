@@ -40,9 +40,18 @@ label {
     margin-top: 1em; 
 }
 
+label {
+    font-size: 25px;
+    font-weight: bold;
+    color:cadetblue;
+    margin-bottom: 4em;
+    display: inline-block;
+    margin-top: 2em;
+}
+
 /* fields */
 input[type="text"] {
-    width: 50%; /* Make input fields take up the full width */
+    width: 100%; /* Make input fields take up the full width */
     padding: 0.8em; /* Add padding inside the input field */
     margin-top: 0.5em; /* Space between the label and input */
     font-size: 16px;
