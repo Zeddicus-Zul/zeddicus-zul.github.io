@@ -6,8 +6,8 @@ import {
   getDocs,
   query,
   orderBy,
-  deleteDoc,  
-  doc,         
+  deleteDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 // Firebase configuration
@@ -15,7 +15,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDfKWTQQTChVooan2CePhz3GEEYYjYi5GU",
   authDomain: "movie-night-1b2eb.firebaseapp.com",
   projectId: "movie-night-1b2eb",
-  storageBucket: "movie-night-1b2eb.appspot.com", 
+  storageBucket: "movie-night-1b2eb.appspot.com",
   messagingSenderId: "1041676507691",
   appId: "1:1041676507691:web:89e34403a1a9ee5e22286e",
   measurementId: "G-E7TZH7S2RE",
@@ -40,6 +40,10 @@ export async function submitMovie() {
       });
       console.log("Movie title submitted successfully!");
       alert("Movie title submitted!");
+      //Clears the input fields after submission 
+      document.getElementById("name").value = "";
+      document.getElementById("title").value = "";
+
       loadMovies(); // Reload the list of movies
     } catch (error) {
       console.error("Error submitting movie title:", error);
