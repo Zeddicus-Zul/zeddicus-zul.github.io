@@ -54,7 +54,6 @@
             margin-left: 10px;
             font-weight: bold;
         }
-        
     </style>
 </head>
 
@@ -66,14 +65,19 @@
 
     <main>
         <form id="movieForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required><br>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
 
-            <label for="title">Movie Title:</label>
-            <input type="text" id="title" required><br>
+            <div class="form-group">
+                <label for="title">Movie Title:</label>
+                <input type="text" id="title" required>
+            </div>
 
-            <button type="button" id="submitBtn">Submit Movie Title</button> <!-- Use id instead of inline onclick -->
+            <button type="button" id="submitBtn">Submit Movie Title</button>
         </form>
+
 
         <div id="movies" class="movie-list"></div>
     </main>

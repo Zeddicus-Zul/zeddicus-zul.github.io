@@ -7,10 +7,10 @@ body {
     padding: 0;
 }
 
-/* Apply styles to headings, pharagraphs and class */
+/* Apply styles to headings, paragraphs and classes */
 h1 {
     color: #c500cc;
-    text-align: center; /* Center-align the heading */
+    text-align: center;
 }
 
 p {
@@ -23,54 +23,57 @@ p {
 }
 
 form {
-    max-width: 600px; 
-    margin: 2em auto; /*2em means twice the font size (2 * 12pt)*/
-    padding: 1em 2em; /*1em means normal font size*/
-    background-color: #fff; 
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-label {
+/* Flexbox container for label and input */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+/* Flexbox label styling */
+.form-group label {
+    width: 30%;
+    margin-right: 1em;
     font-size: 25px;
     font-weight: bold;
     color: cadetblue;
-    /* use 'display: block' instead of inline-block */
-    display: block; 
-    margin-top: 1em;
-    /* reduce margin-bottom so it’s not so huge */
-    margin-bottom: 0.5em;
 }
 
-
-/* fields */
-input[type="text"] {
-    width: 100%; /* Make input fields take up the full width */
-    padding: 0.8em; /* Add padding inside the input field */
-    margin-top: 0.5em; /* Space between the label and input */
+/* Flexbox input styling */
+.form-group input[type="text"] {
+    width: 70%;
+    padding: 0.8em;
     font-size: 16px;
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 4px; /* Slightly rounded corners */
-    box-sizing: border-box; /* Ensure padding doesn't affect the width */
-    background-color: #f9f9f9; /* Light grey background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
 /* Styling for the submit button */
 button[type="button"] {
-    background-color: #c500cc; /* Button color */
+    background-color: #c500cc;
     color: white;
     font-size: 16px;
-    padding: 0.8em 2em; /* Add padding inside the button */
+    padding: 0.8em 2em;
     border: none;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-    margin-top: 1em; /* Space between input and button */
+    transition: background-color 0.3s ease;
+    margin-top: 1em;
 }
 
 /* Button hover effect */
 button[type="button"]:hover {
-    background-color: #9b00a6; /* Darker shade when hovering */
+    background-color: #9b00a6;
 }
 
 /* Add some space between the form and other content */
