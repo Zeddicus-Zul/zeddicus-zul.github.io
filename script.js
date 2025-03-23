@@ -97,3 +97,18 @@ document.addEventListener("DOMContentLoaded", loadMovies);
 
 // Add event listener for submit button
 document.getElementById("submitBtn").addEventListener("click", submitMovie);
+
+document.getElementById('generateImageBtn').addEventListener('click', async () => {
+  try {
+    const response = await fetch('/generate-image'); // Ensure this URL matches your server's endpoint
+    const result = await response.json();
+    if(result.imageUrl){
+      document.getElementById('imageContainer').innerHTML = `<img src="${result.imageUrl}" alt="AI Generated Movie Poster" style="max-width:100%;">`;
+    } else {
+      console.error('No image URL returned', result);
+    }
+  } catch (error) {
+    console.error('Error fetching generated image:', error);
+  }
+});
+
