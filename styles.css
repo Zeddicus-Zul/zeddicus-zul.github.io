@@ -32,22 +32,16 @@ form {
 }
 
 label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5em;
-    display: block; /* Display labels as block elements */
-    margin-top: 1em; 
-}
-
-label {
     font-size: 25px;
     font-weight: bold;
-    color:cadetblue;
-    margin-bottom: 4em;
-    display: inline-block;
-    margin-top: 2em;
+    color: cadetblue;
+    /* use 'display: block' instead of inline-block */
+    display: block; 
+    margin-top: 1em;
+    /* reduce margin-bottom so it’s not so huge */
+    margin-bottom: 0.5em;
 }
+
 
 /* fields */
 input[type="text"] {
