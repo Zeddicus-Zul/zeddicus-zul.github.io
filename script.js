@@ -39,7 +39,6 @@ export async function submitMovie() {
         timestamp: new Date(), // Save the current date and time
       });
       console.log("Movie title submitted successfully!");
-      alert("Movie title submitted!");
       //Clears the input fields after submission 
       document.getElementById("name").value = "";
       document.getElementById("title").value = "";
