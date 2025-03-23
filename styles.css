@@ -25,7 +25,7 @@ p {
 form {
     max-width: 600px; 
     margin: 2em auto; /*2em means twice the font size (2 * 12pt)*/
-    padding: 1em; /*1em means normal font size*/
+    padding: 1em 2em; /*1em means normal font size*/
     background-color: #fff; 
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
